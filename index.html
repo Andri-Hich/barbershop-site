@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Барбершоп БОРІДНИЙ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0; }
-        .container { width: 90%; max-width: 800px; margin: auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-        h1, h2 { color: #2c3e50; }
+        body { font-family: 'Poppins', sans-serif; background-color: #1a1a1a; color: #ffffff; margin: 0; padding: 0; }
+        .container { width: 90%; max-width: 800px; margin: auto; padding: 20px; background: #2c2c2c; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+        h1, h2 { color: #c19a6b; }
         ul { list-style: none; padding: 0; }
         li { margin: 10px 0; }
-        img { max-width: 100px; height: auto; margin-right: 10px; }
-        .gallery, .reviews { display: flex; gap: 10px; }
+        img { max-width: 100px; height: auto; margin-right: 10px; border-radius: 8px; }
+        .gallery, .reviews { display: flex; flex-wrap: wrap; gap: 10px; }
+        .gallery img, .reviews img { flex-grow: 1; max-width: 30%; }
         .form-section { margin-top: 20px; }
-        input, select, button { padding: 8px; margin-top: 5px; }
-        .button { background-color: #3498db; color: white; border: none; cursor: pointer; }
-        .button:hover { background-color: #2980b9; }
+        input, select, button { padding: 10px; margin-top: 5px; border-radius: 5px; border: none; }
+        .button { background-color: #c19a6b; color: white; cursor: pointer; font-weight: bold; }
+        .button:hover { background-color: #a0784d; }
+        .record-button { background-color: #8b0000; color: white; font-size: 16px; padding: 12px; width: 100%; border-radius: 5px; }
+        @media (max-width: 600px) {
+            .gallery img, .reviews img { max-width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -65,7 +71,7 @@
         <div class="form-section">
             <input type="text" placeholder="Ваше ім'я">
             <input type="tel" placeholder="Телефон">
-            <button class="button">Записатись</button>
+            <button class="record-button">Записатись</button>
         </div>
     </div>
 
