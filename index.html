@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Барбершоп БОРІДНИЙ</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0; }
+        .container { width: 90%; max-width: 800px; margin: auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1, h2 { color: #2c3e50; }
+        ul { list-style: none; padding: 0; }
+        li { margin: 10px 0; }
+        img { max-width: 100px; height: auto; margin-right: 10px; }
+        .gallery, .reviews { display: flex; gap: 10px; }
+        .form-section { margin-top: 20px; }
+        input, select, button { padding: 8px; margin-top: 5px; }
+        .button { background-color: #3498db; color: white; border: none; cursor: pointer; }
+        .button:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Барбершоп БОРІДНИЙ</h1>
+        <p>Чоловіча атмосфера Чикаго 60-х</p>
+
+        <h2>Наші послуги</h2>
+        <ul>
+            <li>Чоловіча стрижка - 500 грн</li>
+            <li>Корекція бороди - 500 грн</li>
+            <li>Гоління небезпечною бритвою - 500 грн</li>
+            <li>Камуфляж сивини - 500 грн</li>
+            <li>Масаж голови - 500 грн</li>
+            <li>Укладка волосся - 500 грн</li>
+        </ul>
+
+        <h2>Галерея робіт</h2>
+        <div class="gallery">
+            <img src="client1.jpg" alt="Клієнт 1">
+            <img src="client2.jpg" alt="Клієнт 2">
+            <img src="client3.jpg" alt="Клієнт 3">
+        </div>
+
+        <h2>Розрахунок знижки</h2>
+        <div class="form-section">
+            <select id="service">
+                <option value="500">1 послуга</option>
+            </select>
+            <select id="discount">
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+            </select>
+            <button class="button" onclick="calculatePrice()">Розрахувати</button>
+            <p id="result">Підсумкова ціна: 0 грн</p>
+        </div>
+
+        <h2>Відгуки клієнтів</h2>
+        <div class="reviews">
+            <img src="review1.jpg" alt="Відгук 1">
+            <img src="review2.jpg" alt="Відгук 2">
+            <img src="review3.jpg" alt="Відгук 3">
+        </div>
+
+        <h2>Запис на стрижку</h2>
+        <div class="form-section">
+            <input type="text" placeholder="Ваше ім'я">
+            <input type="tel" placeholder="Телефон">
+            <button class="button">Записатись</button>
+        </div>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            const price = parseInt(document.getElementById('service').value);
+            const discount = parseInt(document.getElementById('discount').value);
+            const finalPrice = price - (price * discount / 100);
+            document.getElementById('result').innerText = `Підсумкова ціна: ${finalPrice} грн`;
+        }
+    </script>
+</body>
+</html>
