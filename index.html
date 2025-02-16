@@ -6,82 +6,67 @@
     <title>Барбершоп БОРІДНИЙ</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #1a1a1a; color: #ffffff; margin: 0; padding: 0; }
-        .container { width: 90%; max-width: 800px; margin: auto; padding: 20px; background: #2c2c2c; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
-        h1, h2 { color: #c19a6b; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-        img { max-width: 100px; height: auto; margin-right: 10px; border-radius: 8px; }
-        .gallery, .reviews { display: flex; flex-wrap: wrap; gap: 10px; }
-        .gallery img, .reviews img { flex-grow: 1; max-width: 30%; }
-        .form-section { margin-top: 20px; }
-        input, select, button { padding: 10px; margin-top: 5px; border-radius: 5px; border: none; }
-        .button { background-color: #c19a6b; color: white; cursor: pointer; font-weight: bold; }
-        .button:hover { background-color: #a0784d; }
-        .record-button { background-color: #8b0000; color: white; font-size: 16px; padding: 12px; width: 100%; border-radius: 5px; }
-        @media (max-width: 600px) {
-            .gallery img, .reviews img { max-width: 100%; }
+        body { font-family: 'Poppins', sans-serif; background-color: #0d0d0d; color: #ffffff; margin: 0; padding: 0; }
+        .container { width: 100%; max-width: 1200px; margin: auto; padding: 20px; }
+        header { background-color: #1a1a1a; padding: 20px 0; text-align: center; }
+        header h1 { color: #c19a6b; font-size: 36px; margin: 0; }
+        section { margin: 40px 0; }
+        h2 { color: #c19a6b; }
+        .services, .gallery, .reviews { display: flex; flex-wrap: wrap; gap: 15px; }
+        .service, .gallery-item, .review-item { background-color: #1a1a1a; padding: 15px; border-radius: 8px; flex: 1 1 calc(33.333% - 10px); text-align: center; }
+        img { max-width: 100%; border-radius: 8px; }
+        .button { background-color: #c19a6b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
+        .form-section { background-color: #1a1a1a; padding: 20px; border-radius: 8px; text-align: center; }
+        input, select, button { padding: 10px; margin: 5px; border-radius: 5px; border: none; }
+        .record-button { background-color: #8b0000; color: white; cursor: pointer; padding: 12px 20px; border-radius: 5px; }
+        @media (max-width: 768px) {
+            .service, .gallery-item, .review-item { flex: 1 1 100%; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Барбершоп БОРІДНИЙ</h1>
         <p>Чоловіча атмосфера Чикаго 60-х</p>
+    </header>
 
-        <h2>Наші послуги</h2>
-        <ul>
-            <li>Чоловіча стрижка - 500 грн</li>
-            <li>Корекція бороди - 500 грн</li>
-            <li>Гоління небезпечною бритвою - 500 грн</li>
-            <li>Камуфляж сивини - 500 грн</li>
-            <li>Масаж голови - 500 грн</li>
-            <li>Укладка волосся - 500 грн</li>
-        </ul>
+    <div class="container">
+        <section>
+            <h2>Наші послуги</h2>
+            <div class="services">
+                <div class="service">Чоловіча стрижка - 500 грн</div>
+                <div class="service">Корекція бороди - 500 грн</div>
+                <div class="service">Гоління небезпечною бритвою - 500 грн</div>
+                <div class="service">Камуфляж сивини - 500 грн</div>
+                <div class="service">Масаж голови - 500 грн</div>
+                <div class="service">Укладка волосся - 500 грн</div>
+            </div>
+        </section>
 
-        <h2>Галерея робіт</h2>
-        <div class="gallery">
-            <img src="client1.jpg" alt="Клієнт 1">
-            <img src="client2.jpg" alt="Клієнт 2">
-            <img src="client3.jpg" alt="Клієнт 3">
-        </div>
+        <section>
+            <h2>Галерея робіт</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="client1.jpg" alt="Клієнт 1"></div>
+                <div class="gallery-item"><img src="client2.jpg" alt="Клієнт 2"></div>
+                <div class="gallery-item"><img src="client3.jpg" alt="Клієнт 3"></div>
+            </div>
+        </section>
 
-        <h2>Розрахунок знижки</h2>
-        <div class="form-section">
-            <select id="service">
-                <option value="500">1 послуга</option>
-            </select>
-            <select id="discount">
-                <option value="5">5%</option>
-                <option value="10">10%</option>
-                <option value="15">15%</option>
-            </select>
-            <button class="button" onclick="calculatePrice()">Розрахувати</button>
-            <p id="result">Підсумкова ціна: 0 грн</p>
-        </div>
+        <section>
+            <h2>Відгуки клієнтів</h2>
+            <div class="reviews">
+                <div class="review-item">Відгук 1</div>
+                <div class="review-item">Відгук 2</div>
+                <div class="review-item">Відгук 3</div>
+            </div>
+        </section>
 
-        <h2>Відгуки клієнтів</h2>
-        <div class="reviews">
-            <img src="review1.jpg" alt="Відгук 1">
-            <img src="review2.jpg" alt="Відгук 2">
-            <img src="review3.jpg" alt="Відгук 3">
-        </div>
-
-        <h2>Запис на стрижку</h2>
-        <div class="form-section">
+        <section class="form-section">
+            <h2>Запис на стрижку</h2>
             <input type="text" placeholder="Ваше ім'я">
             <input type="tel" placeholder="Телефон">
             <button class="record-button">Записатись</button>
-        </div>
+        </section>
     </div>
-
-    <script>
-        function calculatePrice() {
-            const price = parseInt(document.getElementById('service').value);
-            const discount = parseInt(document.getElementById('discount').value);
-            const finalPrice = price - (price * discount / 100);
-            document.getElementById('result').innerText = `Підсумкова ціна: ${finalPrice} грн`;
-        }
-    </script>
 </body>
 </html>
